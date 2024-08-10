@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "project": {
+      "name": "personal-portfolio",
+      "type": "nextjs"
+    },
+    "build": {
+      "env": {}
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/$1"
+      }
+    ],
+    "framework": "nextjs"
+  }
