@@ -1,23 +1,15 @@
 {
-    "version": 1,
-    "project": {
-      "name": "personal-portfolio",
-      "type": "nextjs"
-    },
-    "build": {
-      "env": {}
-    },
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/$1"
-      }
-    ],
-    "framework": "nextjs"
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
