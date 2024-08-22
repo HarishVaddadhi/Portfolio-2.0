@@ -1,3 +1,4 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -7,6 +8,21 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+  const handleDownload = () => {
+    // Replace '/path/to/your/resume.pdf' with the actual path to your resume file
+    const fileUrl = "/Resume.pdf";
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.setAttribute('download', 'Harish_Vaddadhi_Resume.pdf'); // Set the desired file name here
+    
+    // Append to the body, click programmatically, and then remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -20,7 +36,12 @@ const Home = () => {
             <p className="mb-8">I'm a Software Developer living in Hyderabad. I learn new things remotely and I create websites and other applications for fun.</p>
             {/* buttons & socials*/}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="uppercase flex items-center gap-2"
+                onClick={handleDownload}
+              >
                 <span>Download CV</span>
                 <FiDownload className="text-xl"/>
               </Button>
